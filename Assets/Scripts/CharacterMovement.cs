@@ -45,8 +45,12 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
         inputX = Input.GetAxisRaw("Horizontal");
         float deltaX = inputX * speed;
+=======
+        float inputX = Input.GetAxis("Horizontal");
+>>>>>>> 34e62f4f90c8c5d7b4b8ab03ad8cee440ff2bae7
 
         //jumping
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumpTime > 0)
@@ -58,11 +62,6 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && _canDash)
         {
             StartCoroutine(Dash());
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManagement.Instance.LoadScene();
         }
 
         if(inputX != 0){
@@ -86,6 +85,22 @@ public class CharacterMovement : MonoBehaviour
         Vector2 corner2 = new Vector2(min.x + (max.x - min.x) / 20, min.y - 0.15f);
         Collider2D hit = Physics2D.OverlapArea(corner1, corner2, LayerMask.GetMask("Ground"));
         isGrounded = hit != null;
+
+        MovingPlatform platform = null;
+        if (isGrounded)
+        {
+            platform = hit.GetComponent<MovingPlatform>();
+        }
+
+        if (platform != null)
+        {
+            transform.parent = platform.transform;
+        }
+        else
+        {
+            transform.parent = null;
+        }
+
 
         MoveSettings(deltaX, isGrounded);
         // This is the case for slope, gravity will pull it down
