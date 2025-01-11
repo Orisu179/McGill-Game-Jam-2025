@@ -83,17 +83,17 @@ public class PanelMove : MonoBehaviour
         //moving out of panel
         InPanel = false;
         currentPanel = null;
-        if(transform.position.x > other.transform.position.x + other.transform.localScale.x / 2.5f){
+        if(transform.position.x > other.transform.position.x + other.transform.localScale.x / 2.2f){
             leaveVelocity = new Vector2(1, 0);
         }
-        else if(transform.position.x < other.transform.position.x - other.transform.localScale.x / 2.5f){
+        else if(transform.position.x < other.transform.position.x - other.transform.localScale.x / 2.2f){
             leaveVelocity = new Vector2(-1, 0);
         }
 
-        if(transform.position.y > other.transform.position.y + other.transform.localScale.y / 2.5f){
+        if(transform.position.y > other.transform.position.y + other.transform.localScale.y / 2.2f){
             leaveVelocity = new Vector2(0, 1);
         }
-        else if(transform.position.y < other.transform.position.y - other.transform.localScale.y / 2.5f){
+        else if(transform.position.y < other.transform.position.y - other.transform.localScale.y / 2.2f){
             leaveVelocity = new Vector2(0, -1);
         }
     }
