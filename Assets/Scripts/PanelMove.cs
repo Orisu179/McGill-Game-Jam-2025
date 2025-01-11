@@ -3,74 +3,82 @@ using Unity.VisualScripting.ReorderableList;
 using UnityEditor.Rendering.LookDev;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class panelMove : MonoBehaviour
+public class PanelMove : MonoBehaviour
 {
-    public static bool inPanel;
+    public static bool InPanel;
+    public Transform currentPanel;
+
     [SerializeField] private Transform spriteTransform;
-    public static Transform currentPanel;
-    [SerializeField] private CharacterController movementScript;
-    private Rigidbody2D rb;
+    private CharacterMovement _movementScript;
+    private Rigidbody2D _rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
+        _rb = gameObject.GetComponent<Rigidbody2D>();
+        _movementScript = gameObject.GetComponent<CharacterMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(inPanel == true){
+        if (InPanel)
+        {
             setSize(1);
             //reenable movement
-            if(movementScript.enabled == false){
+            if (!_movementScript.enabled)
+            {
                 //re-entering a panel
-                movementScript.enabled = true;
-                rb.gravityScale = 1;
+                _movementScript.enabled = true;
+                _rb.gravityScale = 1;
 
                 //slow down player
-                rb.linearVelocity /= 3;
-                cameraScript.Shake(0.3f);
+                _rb.linearVelocity /= 3;
+                CameraScript.Shake(0.3f);
             }
         }
-        else{
+        else
+        {
             setSize(2);
             //disable player movement script
 
-            if(movementScript.enabled == true){
-
+            if (_movementScript.enabled)
+            {
                 //leaving a panel
-                movementScript.enabled = false;
+                _movementScript.enabled = false;
 
                 //boost
-                rb.linearVelocity = rb.linearVelocity.normalized * 10;
+                _rb.linearVelocity = _rb.linearVelocity.normalized * 10;
 
-                rb.gravityScale = 0;
-                rb.linearDamping = 0;
-                
-                cameraScript.Shake(0.3f);
+                _rb.gravityScale = 0;
+                _rb.linearDamping = 0;
+
+                CameraScript.Shake(0.3f);
             }
         }
     }
 
-    private void setSize(float targetSize){
+    private void setSize(float targetSize)
+    {
         //change size gradually to target size
-        spriteTransform.localScale = Vector3.Lerp(spriteTransform.localScale, new Vector3(targetSize, targetSize), Time.deltaTime * 10);
+        spriteTransform.localScale = Vector3.Lerp(spriteTransform.localScale, new Vector3(targetSize, targetSize),
+            Time.deltaTime * 10);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnTriggerEnter2D(Collider2D other)
+    {
         //moving into panel
-        inPanel = true;
+        InPanel = true;
         currentPanel = other.transform;
-        cameraScript.cameraPanelSize = other.GetComponent<panelInfo>().size;
+        CameraScript.CameraPanelSize = other.GetComponent<PanelInfo>().size;
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
+    private void OnTriggerExit2D(Collider2D other)
+    {
         //moving out of panel
-        inPanel = false;
+        InPanel = false;
         currentPanel = null;
     }
-
-
 }

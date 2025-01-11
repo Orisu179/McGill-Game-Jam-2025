@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class panelInfo : MonoBehaviour
+public class PanelInfo : MonoBehaviour
 {
     public float size;
 
