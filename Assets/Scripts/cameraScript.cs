@@ -15,7 +15,7 @@ public class cameraScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {   
         //if the players in a panel, go to the panel
         //if not, got to the player
@@ -39,7 +39,7 @@ public class cameraScript : MonoBehaviour
         camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, cameraPanelSize, Time.deltaTime * 2);
 
         transform.position += new Vector3(Random.Range(-shake, shake), Random.Range(-shake, shake));
-        shake *= 0.9f;
+        shake *= 0.85f;
     }
 
     public static void Shake(float amount){

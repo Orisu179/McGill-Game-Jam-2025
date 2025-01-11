@@ -1,4 +1,6 @@
 using System;
+using Unity.VisualScripting;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
@@ -11,6 +13,8 @@ public class CharacterController : MonoBehaviour
     private Rigidbody2D _rb;
     [SerializeField] private Transform checkPosition;
     [SerializeField] private LayerMask ground;
+    private float speedFactor;
+    private bool isGrounded;
 
     void Start()
     {
@@ -19,11 +23,12 @@ public class CharacterController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        float deltaX = Input.GetAxis("Horizontal") * speed;
-        Vector2 movement = new Vector2(deltaX, _rb.linearVelocity.y);
-        _rb.linearVelocity = movement;
+        //float deltaX = Input.GetAxis("Horizontal") * speed;
+        //Vector2 movement = new Vector2(deltaX, _rb.linearVelocity.y);
+        float inputX = Input.GetAxis("Horizontal");
+        _rb.linearVelocity += new Vector2(inputX * speed * Time.fixedDeltaTime, 0) * speedFactor;
 
         /*Vector3 max = _box.bounds.max;
         Vector3 min = _box.bounds.min;
@@ -32,18 +37,48 @@ public class CharacterController : MonoBehaviour
         Collider2D hit = Physics2D.OverlapArea(corner1, corner2);
         bool isGrounded = hit != null && hit.gameObject.layer == LayerMask.NameToLayer("Ground");
         */
-        bool isGrounded = Physics2D.CircleCast(checkPosition.position, 1, Vector2.zero, 0, ground);
+        isGrounded = Physics2D.CircleCast(checkPosition.position, 0.1f, Vector2.zero, 0, ground);
 
         // This is the case for slope, gravity will pull it down
         
         //_rb.gravityScale = (isGrounded && Mathf.Approximately(deltaX, 0)) ? 0 : 1;
-        
+
+
+        if(isGrounded == true){
+            _rb.linearDamping = 5f;
+            speedFactor = 1;
+        }
+        else{
+            //in air
+            _rb.linearDamping = 4;
+            speedFactor = 0.7f;
+        }
+
+        if(_rb.linearVelocityY > 2){
+            _rb.gravityScale = 0.5f;
+        }
+        else if(isGrounded == true){
+            _rb.gravityScale = 0;
+        }
+        else{
+            _rb.gravityScale = 2f;
+        }
+
+        float direction = _rb.linearVelocityX / Mathf.Abs(_rb.linearVelocityX);
+
+        if(direction != inputX){
+            speedFactor = 2f;
+        }
+
+        _rb.linearVelocity *= new Vector2(1 - Time.fixedDeltaTime * 2, 1);
+    }
+
+    void Update(){
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             //_rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             _rb.linearVelocityY = jumpForce;
         }
-
     }
 
     //TODO: do the dash

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using Unity.VisualScripting.ReorderableList;
 using UnityEditor.Rendering.LookDev;
 using UnityEditor.ShaderGraph.Internal;
@@ -30,6 +31,7 @@ public class panelMove : MonoBehaviour
 
                 //slow down player
                 rb.linearVelocity /= 3;
+                cameraScript.Shake(0.3f);
             }
         }
         else{
@@ -45,13 +47,16 @@ public class panelMove : MonoBehaviour
                 rb.linearVelocity = rb.linearVelocity.normalized * 10;
 
                 rb.gravityScale = 0;
+                rb.linearDamping = 0;
+                
+                cameraScript.Shake(0.3f);
             }
         }
     }
 
     private void setSize(float targetSize){
         //change size gradually to target size
-        spriteTransform.localScale = Vector3.Lerp(spriteTransform.localScale, new Vector3(targetSize, targetSize), Time.deltaTime * 5);
+        spriteTransform.localScale = Vector3.Lerp(spriteTransform.localScale, new Vector3(targetSize, targetSize), Time.deltaTime * 10);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
