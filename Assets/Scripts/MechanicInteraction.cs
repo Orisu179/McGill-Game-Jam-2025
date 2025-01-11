@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 public class MechanicInteraction : MonoBehaviour
 {
@@ -25,5 +26,10 @@ public class MechanicInteraction : MonoBehaviour
         else if(other.gameObject.tag == "Bubble"){
             _rb.linearVelocity = new Vector2(_rb.linearVelocityX, 12);
         }
+    }
+
+    IEnumerator wait(){
+        yield return new WaitForSeconds(0.1f);
+        //reenable hitbox
     }
 }
