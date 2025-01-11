@@ -50,18 +50,20 @@ public class SceneManagement : MonoBehaviour
         InitColor();
     }
 
-    private void Start()
-    {
-       // myLoadedAssetBundle = AssetBundle.LoadFromFile()
-    }
+    // private void Start()
+    // {
+    //     myLoadedAssetBundle = AssetBundle.LoadFromFile("Assets/Scenes");
+    //     _sceneNameList = myLoadedAssetBundle.GetAllAssetNames();
+    //     Debug.Log(_sceneNameList[0]);
+    // }
 
     private void GenerateScene()
     {
         _sceneNameList.Add("Panels 2");
-        // for (int i = 1; i <= numberOfLevels; i++)
-        // {
-        //     _sceneNameList.Add("Assets/Scenes/Level" + i);
-        // }
+        for (int i = 1; i <= numberOfLevels; i++)
+        {
+            _sceneNameList.Add("Assets/Scenes/Level" + i);
+        }
     }
 
     private void InitColor()
@@ -91,7 +93,8 @@ public class SceneManagement : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadScene(_sceneNameList[_sceneCounter]);
+        SceneManager.LoadScene(_sceneCounter);
+        // SceneManager.LoadScene(_sceneNameList[_sceneCounter]);
     }
 
     public Color ConvertToColorValues(GoalColors color)
