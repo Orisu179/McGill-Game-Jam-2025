@@ -16,7 +16,6 @@ public class CameraScript : MonoBehaviour
     {
         _camera = gameObject.GetComponent<Camera>();
         _panelMove = player.GetComponent<PanelMove>();
-        Debug.Log(_panelMove);
     }
 
     // Update is called once per frame
