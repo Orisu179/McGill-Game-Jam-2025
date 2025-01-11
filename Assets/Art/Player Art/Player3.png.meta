@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c6d03cac920374a19b3558c19be46309
+guid: 96cde631d89404142afa738018df0890
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7034660610512690298
-    second: Boom_0
+      213: -2474250949257483082
+    second: Player3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boom_0
+      name: Player3_0
       rect:
         serializedVersion: 2
-        x: 71
-        y: 79
-        width: 609
-        height: 616
+        x: 894
+        y: 361
+        width: 718
+        height: 1620
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a7c9a05dd8220a160800000000000000
-      internalID: 7034660610512690298
+      spriteID: 6bca55ceed1b9add0800000000000000
+      internalID: -2474250949257483082
       vertices: []
       indices: 
       edges: []

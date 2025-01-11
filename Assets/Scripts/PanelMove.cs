@@ -15,6 +15,8 @@ public class PanelMove : MonoBehaviour
     private CharacterMovement _movementScript;
     private Rigidbody2D _rb;
     private Vector2 leaveVelocity;
+    public SpriteRenderer mySprite;
+    public Sprite dashing;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,7 +30,7 @@ public class PanelMove : MonoBehaviour
     {
         if (InPanel)
         {
-            setSize(1);
+            //etSize(1);
             //reenable movement
             if (!_movementScript.enabled)
             {
@@ -43,7 +45,7 @@ public class PanelMove : MonoBehaviour
         }
         else
         {
-            setSize(2);
+            //setSize(2);
             //disable player movement script
 
             if (_movementScript.enabled)
@@ -59,6 +61,7 @@ public class PanelMove : MonoBehaviour
                 _rb.linearDamping = 0;
 
                 CameraScript.Shake(0.3f);
+                mySprite.sprite = dashing;
             }
         }
     }
@@ -67,7 +70,7 @@ public class PanelMove : MonoBehaviour
     {
         //change size gradually to target size
         spriteTransform.localScale = Vector3.Lerp(spriteTransform.localScale, new Vector3(targetSize, targetSize),
-            Time.deltaTime * 10);
+        Time.deltaTime * 10);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
