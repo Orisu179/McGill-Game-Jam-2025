@@ -45,12 +45,8 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
         inputX = Input.GetAxisRaw("Horizontal");
         float deltaX = inputX * speed;
-=======
-        float inputX = Input.GetAxis("Horizontal");
->>>>>>> 34e62f4f90c8c5d7b4b8ab03ad8cee440ff2bae7
 
         //jumping
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumpTime > 0)
