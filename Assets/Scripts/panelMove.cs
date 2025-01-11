@@ -8,7 +8,7 @@ public class panelMove : MonoBehaviour
     public static bool inPanel;
     [SerializeField] private Transform spriteTransform;
     public static Transform currentPanel;
-    [SerializeField] private playerMovement movementScript;
+    [SerializeField] private CharacterController movementScript;
     private Rigidbody2D rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

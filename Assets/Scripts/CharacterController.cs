@@ -9,6 +9,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float delayBetweenDashPress = 0.25f;
     private BoxCollider2D _box;
     private Rigidbody2D _rb;
+    [SerializeField] private GameObject checkPosition;
 
     void Start()
     {
@@ -29,6 +30,8 @@ public class CharacterController : MonoBehaviour
         Vector2 corner2 = new Vector2(min.x, min.y - 0.2f);
         Collider2D hit = Physics2D.OverlapArea(corner1, corner2);
         bool isGrounded = hit != null && hit.gameObject.layer == LayerMask.NameToLayer("Ground");
+
+        //bool isGrounded = false;
 
         // This is the case for slope, gravity will pull it down
         _rb.gravityScale = (isGrounded && Mathf.Approximately(deltaX, 0)) ? 0 : 1;
