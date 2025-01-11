@@ -51,10 +51,6 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         inputX = Input.GetAxisRaw("Horizontal");
-<<<<<<< Updated upstream
-=======
-        float deltaX = inputX * speed;
->>>>>>> Stashed changes
 
         //jumping
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumpTime > 0)
@@ -131,7 +127,7 @@ public class CharacterMovement : MonoBehaviour
         }
         else if (isGrounded)
         {
-            _rb.gravityScale = 0.5f;
+            _rb.gravityScale = 0.4f;
         }
         else
         {
