@@ -35,7 +35,6 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         float inputX = Input.GetAxis("Horizontal");
-        float deltaX = inputX * speed;
 
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumpTime > 0)
         {
@@ -66,6 +65,22 @@ public class CharacterMovement : MonoBehaviour
         Vector2 corner2 = new Vector2(min.x + (max.x - min.x) / 20, min.y - 0.15f);
         Collider2D hit = Physics2D.OverlapArea(corner1, corner2, LayerMask.GetMask("Ground"));
         bool isGrounded = hit != null;
+
+        MovingPlatform platform = null;
+        if (isGrounded)
+        {
+            platform = hit.GetComponent<MovingPlatform>();
+        }
+
+        if (platform != null)
+        {
+            transform.parent = platform.transform;
+        }
+        else
+        {
+            transform.parent = null;
+        }
+
 
         MoveSettings(deltaX, isGrounded);
         // This is the case for slope, gravity will pull it down
