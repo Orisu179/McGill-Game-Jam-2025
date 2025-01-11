@@ -28,6 +28,8 @@ public class SceneManagement : MonoBehaviour
     private Dictionary<GoalColors, ColorData> _achievedColors;
     private int _sceneCounter;
     private List<String> _sceneNameList;
+    private AssetBundle myLoadedAssetBundle;
+
 
     private void Awake()
     {
@@ -48,13 +50,18 @@ public class SceneManagement : MonoBehaviour
         InitColor();
     }
 
+    private void Start()
+    {
+       // myLoadedAssetBundle = AssetBundle.LoadFromFile()
+    }
+
     private void GenerateScene()
     {
-        _sceneNameList.Add("Panels");
-        for (int i = 1; i <= numberOfLevels; i++)
-        {
-            _sceneNameList.Add("Assets/Scenes/Level" + i);
-        }
+        _sceneNameList.Add("Panels 2");
+        // for (int i = 1; i <= numberOfLevels; i++)
+        // {
+        //     _sceneNameList.Add("Assets/Scenes/Level" + i);
+        // }
     }
 
     private void InitColor()
