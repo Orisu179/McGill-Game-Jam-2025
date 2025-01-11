@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -38,7 +39,7 @@ public class CharacterMovement : MonoBehaviour
 
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumpTime > 0)
         {
-            _rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            _rb.linearVelocity = new Vector3(_rb.linearVelocityX, jumpForce);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && _canDash)
@@ -68,7 +69,6 @@ public class CharacterMovement : MonoBehaviour
 
         MoveSettings(deltaX, isGrounded);
         // This is the case for slope, gravity will pull it down
-        _rb.gravityScale = (isGrounded && Mathf.Approximately(deltaX, 0)) ? 0 : 1;
     }
 
     private void MoveSettings(float inputX, bool isGrounded)
