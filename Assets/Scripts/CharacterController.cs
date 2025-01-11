@@ -28,7 +28,7 @@ public class CharacterController : MonoBehaviour
         Vector2 corner1 = new Vector2(max.x, min.y - 0.1f);
         Vector2 corner2 = new Vector2(min.x, min.y - 0.2f);
         Collider2D hit = Physics2D.OverlapArea(corner1, corner2);
-        bool isGrounded = hit != null;
+        bool isGrounded = hit != null && hit.gameObject.layer == LayerMask.NameToLayer("Ground");
 
         // This is the case for slope, gravity will pull it down
         _rb.gravityScale = (isGrounded && Mathf.Approximately(deltaX, 0)) ? 0 : 1;
