@@ -3,48 +3,50 @@ using UnityEditor.Rendering.LookDev;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
-public class panelMove : MonoBehaviour
+public class PanelMove : MonoBehaviour
 {
-    public static bool inPanel;
+    public static Transform CurrentPanel;
+
     [SerializeField] private Transform spriteTransform;
-    public static Transform currentPanel;
-    [SerializeField] private CharacterController movementScript;
-    private Rigidbody2D rb;
+    private CharacterMovement _movementScript;
+    private static bool _inPanel;
+    private Rigidbody2D _rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
+        _rb = gameObject.GetComponent<Rigidbody2D>();
+        _movementScript = gameObject.GetComponent<CharacterMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(inPanel == true){
+        if(_inPanel == true){
             setSize(1);
             //reenable movement
-            if(movementScript.enabled == false){
+            if(_movementScript.enabled == false){
                 //re-entering a panel
-                movementScript.enabled = true;
-                rb.gravityScale = 1;
+                _movementScript.enabled = true;
+                _rb.gravityScale = 1;
 
                 //slow down player
-                rb.linearVelocity /= 3;
+                _rb.linearVelocity /= 3;
             }
         }
         else{
             setSize(2);
             //disable player movement script
 
-            if(movementScript.enabled == true){
+            if(_movementScript.enabled == true){
 
                 //leaving a panel
-                movementScript.enabled = false;
+                _movementScript.enabled = false;
 
                 //boost
-                rb.linearVelocity = rb.linearVelocity.normalized * 10;
+                _rb.linearVelocity = _rb.linearVelocity.normalized * 10;
 
-                rb.gravityScale = 0;
+                _rb.gravityScale = 0;
             }
         }
     }
@@ -56,16 +58,14 @@ public class panelMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         //moving into panel
-        inPanel = true;
-        currentPanel = other.transform;
-        cameraScript.cameraPanelSize = other.GetComponent<panelInfo>().size;
+        _inPanel = true;
+        CurrentPanel = other.transform;
+        cameraScript.CameraPanelSize = other.GetComponent<panelInfo>().size;
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         //moving out of panel
-        inPanel = false;
-        currentPanel = null;
+        _inPanel = false;
+        CurrentPanel = null;
     }
-
-
 }
