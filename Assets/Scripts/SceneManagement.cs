@@ -24,11 +24,8 @@ public class SceneManagement : MonoBehaviour
     }
 
     public static SceneManagement Instance;
-    [SerializeField] private int numberOfLevels;
     private Dictionary<GoalColors, ColorData> _achievedColors;
     private int _sceneCounter;
-    private List<String> _sceneNameList;
-    private AssetBundle myLoadedAssetBundle;
 
 
     private void Awake()
@@ -45,24 +42,14 @@ public class SceneManagement : MonoBehaviour
 
         _sceneCounter = 0;
         _achievedColors = new Dictionary<GoalColors, ColorData>();
-        _sceneNameList = new List<string>();
-        GenerateScene();
         InitColor();
     }
 
-    // private void Start()
-    // {
-    //     myLoadedAssetBundle = AssetBundle.LoadFromFile("Assets/Scenes");
-    //     _sceneNameList = myLoadedAssetBundle.GetAllAssetNames();
-    //     Debug.Log(_sceneNameList[0]);
-    // }
-
-    private void GenerateScene()
+    void Update()
     {
-        _sceneNameList.Add("Panels 2");
-        for (int i = 1; i <= numberOfLevels; i++)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            _sceneNameList.Add("Assets/Scenes/Level" + i);
+           LoadScene();
         }
     }
 
@@ -94,7 +81,6 @@ public class SceneManagement : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene(_sceneCounter);
-        // SceneManager.LoadScene(_sceneNameList[_sceneCounter]);
     }
 
     public Color ConvertToColorValues(GoalColors color)

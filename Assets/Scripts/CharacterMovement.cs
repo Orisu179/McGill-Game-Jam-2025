@@ -47,11 +47,6 @@ public class CharacterMovement : MonoBehaviour
             StartCoroutine(Dash());
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManagement.Instance.LoadScene();
-        }
-
         if(inputX != 0){
             _facingRight = (int)inputX;
         }
