@@ -53,7 +53,7 @@ public class PanelMove : MonoBehaviour
 
                 //boost
                 //_rb.linearVelocity = _rb.linearVelocity.normalized * 10;
-                _rb.linearVelocity = leaveVelocity * 10;
+                _rb.linearVelocity = leaveVelocity * 15;
 
                 _rb.gravityScale = 0;
                 _rb.linearDamping = 0;
