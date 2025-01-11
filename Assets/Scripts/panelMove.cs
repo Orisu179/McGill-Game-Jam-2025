@@ -22,9 +22,14 @@ public class panelMove : MonoBehaviour
     {
         if(inPanel == true){
             setSize(1);
-
+            //reenable movement
             if(movementScript.enabled == false){
+                //re-entering a panel
                 movementScript.enabled = true;
+                rb.gravityScale = 1;
+
+                //slow down player
+                rb.linearVelocity /= 3;
             }
         }
         else{
@@ -32,8 +37,14 @@ public class panelMove : MonoBehaviour
             //disable player movement script
 
             if(movementScript.enabled == true){
+
+                //leaving a panel
                 movementScript.enabled = false;
-                rb.linearVelocity *= 10;
+
+                //boost
+                rb.linearVelocity = rb.linearVelocity.normalized * 10;
+
+                rb.gravityScale = 0;
             }
         }
     }
