@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    [SerializeField] private GameObject player;
 
     public static float CameraPanelSize;
 
@@ -16,6 +16,7 @@ public class CameraScript : MonoBehaviour
     {
         _camera = gameObject.GetComponent<Camera>();
         _panelMove = player.GetComponent<PanelMove>();
+        Debug.Log(_panelMove);
     }
 
     // Update is called once per frame
@@ -27,7 +28,7 @@ public class CameraScript : MonoBehaviour
         {
             //not in a panel
 
-            _targetPosition = player.position;
+            _targetPosition = player.transform.position;
             CameraPanelSize = 7;
         }
         else
