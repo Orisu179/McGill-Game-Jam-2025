@@ -18,14 +18,7 @@ public class CharacterMovement : MonoBehaviour
     private float _gravityScale;
     private float _speedFactor;
     private float _extraJumpTime;
-    private bool _facingRight;
-
-    private enum Direction
-    {
-        Left,
-        Right
-    }
-
+    private int _facingRight;
 
     void Start()
     {
@@ -33,7 +26,7 @@ public class CharacterMovement : MonoBehaviour
         _box = GetComponent<BoxCollider2D>();
         _isDashing = false;
         _canDash = true;
-        _facingRight = true;
+        _facingRight = 1;
         _gravityScale = _rb.gravityScale;
     }
 
@@ -49,14 +42,15 @@ public class CharacterMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && _canDash)
         {
-            if (deltaX < 0)
-            {
-                StartCoroutine(Dash(false));
-            }
-            else
-            {
-                StartCoroutine(Dash(true));
-            }
+            StartCoroutine(Dash());
+        }
+
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            _facingRight = -1;
+        } else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            _facingRight = 1;
         }
     }
 
@@ -132,16 +126,18 @@ public class CharacterMovement : MonoBehaviour
         _extraJumpTime -= Time.deltaTime;
     }
 
-    private IEnumerator Dash(bool facingRight)
+    private IEnumerator Dash()
     {
         _canDash = false;
         _isDashing = true;
         _rb.gravityScale = 0;
-        _rb.linearVelocityX = transform.localScale.x * dashingPower;
+        _rb.linearVelocityX = transform.localScale.x * dashingPower * _facingRight;
         yield return new WaitForSeconds(0.2f);
+
         _rb.gravityScale = _gravityScale;
         _isDashing = false;
         yield return new WaitForSeconds(delayBetweenDashPress);
+
         _canDash = true;
     }
 }
