@@ -17,6 +17,7 @@ public class PanelMove : MonoBehaviour
     private Vector2 leaveVelocity;
     public SpriteRenderer mySprite;
     public Sprite dashing;
+    public GameObject ripEffect;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,7 +40,7 @@ public class PanelMove : MonoBehaviour
                 _rb.gravityScale = 1;
 
                 //slow down player
-                _rb.linearVelocity /= 3;
+                _rb.linearVelocity /= 2;
                 CameraScript.Shake(0.3f);
             }
         }
@@ -79,11 +80,14 @@ public class PanelMove : MonoBehaviour
         InPanel = true;
         currentPanel = other.transform;
         CameraScript.CameraPanelSize = other.GetComponent<PanelInfo>().size;
+        Instantiate(ripEffect, transform.position, Quaternion.identity);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         //moving out of panel
+        Instantiate(ripEffect, transform.position, Quaternion.identity);
+
         InPanel = false;
         currentPanel = null;
         if(transform.position.x > other.transform.position.x + other.transform.localScale.x / 2.2f){
