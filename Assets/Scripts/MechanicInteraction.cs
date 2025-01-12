@@ -35,16 +35,13 @@ public class MechanicInteraction : MonoBehaviour
             _rb.linearVelocity = new Vector2(_rb.linearVelocityX, 12);
             transform.position = other.transform.position;
         }
-        else if (other.gameObject.tag == "Thought")
-        {
-            inThought = true;
-            transform.position = other.gameObject.transform.position;
-            _rb.gravityScale = 0;
-			_bc.enabled = false;
-        }
         else if (other.gameObject.tag == "Border")
         {
             transform.position = _startPos;
+        }
+        else if (other.gameObject.tag == "Portal")
+        {
+            
         }
     }
 }
