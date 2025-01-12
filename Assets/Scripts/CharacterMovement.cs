@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -56,6 +57,7 @@ public class CharacterMovement : MonoBehaviour
         //jumping
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumpTime > 0)
         {
+            //play jump sound effect
             _rb.linearVelocity = new Vector3(_rb.linearVelocityX, jumpForce);
             playerSprite.localScale = new Vector3(0.13f, 0.28f);
         }
