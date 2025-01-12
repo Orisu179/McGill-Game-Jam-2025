@@ -5,6 +5,13 @@ public class QuitMenuButton : MonoBehaviour
     public void QuitGame()
     {
         // Quit the application
-        Application.Quit();
+        if (Application.isEditor)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+        else
+        {
+            Application.Quit();
+        }
     }
 }
