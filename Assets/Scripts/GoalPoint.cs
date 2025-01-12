@@ -54,6 +54,10 @@ public class GoalPoint : MonoBehaviour
         else if(currentScene.name == "super Hue"){
             SceneManager.LoadScene("Portal");
         }
+        else if(currentScene.name == "super Hue"){
+            SceneManager.LoadScene("Ending");
+        }
+
         // SceneManagement.Instance.LoadScene();
     }
 }
