@@ -30,7 +30,7 @@ public class GoalPoint : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
 
         if (currentScene.name == "Tutorial") {
-            SceneManager.LoadScene("Mechanics");
+            SceneManager.LoadScene("Picture");
         }
         else if (currentScene.name == "Mechanics") {
             SceneManager.LoadScene("Panels 2");
