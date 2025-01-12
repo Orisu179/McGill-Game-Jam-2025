@@ -86,7 +86,6 @@ public class PanelMove : MonoBehaviour
     {
         //moving out of panel
         //Instantiate(ripEffect, transform.position, Quaternion.identity);
-
         InPanel = false;
         currentPanel = null;
         if (transform.position.x > other.transform.position.x + other.transform.localScale.x / 2.2f)

@@ -3098,7 +3098,7 @@ MonoBehaviour:
   bangEffect: {fileID: 7525248515448733858, guid: 7829722ae378049adb67e941582b2fb5, type: 3}
   ThoughtShotSpeed: 0
   ThoughtRotationSpeed: 0
-  mySprite: {fileID: 0}
+  mySprite: {fileID: 940363113}
 --- !u!114 &367780152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3111,7 +3111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ebff47adc18344c68046e1fc941c96b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPanel: {fileID: 0}
+  currentPanel: {fileID: 911601556}
   spriteTransform: {fileID: 940363113}
   mySprite: {fileID: 1706593550}
   dashing: {fileID: -4497646796560915508, guid: 076a829d433bd495fa7b3c0c431d291d, type: 3}
@@ -5651,8 +5651,8 @@ Transform:
   m_GameObject: {fileID: 990913034}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -171.3, y: -119.4, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 1}
+  m_LocalPosition: {x: -177.2, y: -126.1, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 775533566}
@@ -7618,7 +7618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c07f1b994b54337a1e836e09426140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupEffect: {fileID: 7525248515448733858, guid: 7829722ae378049adb67e941582b2fb5, type: 3}
+  pickupEffect: {fileID: 8201943554529895030, guid: a68091c34b85d445f8cc5732878a815d, type: 3}
   lockObject: {fileID: 2098520217}
 --- !u!212 &1296537791
 SpriteRenderer:
@@ -9775,7 +9775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c07f1b994b54337a1e836e09426140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupEffect: {fileID: 7525248515448733858, guid: 7829722ae378049adb67e941582b2fb5, type: 3}
+  pickupEffect: {fileID: 8201943554529895030, guid: a68091c34b85d445f8cc5732878a815d, type: 3}
   lockObject: {fileID: 1805359274}
 --- !u!212 &1545000975
 SpriteRenderer:
