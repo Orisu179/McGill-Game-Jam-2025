@@ -14,7 +14,8 @@ public class PanelMove : MonoBehaviour
     [SerializeField] private Transform spriteTransform;
     private CharacterMovement _movementScript;
     private Rigidbody2D _rb;
-    private Vector2 leaveVelocity;
+    private Vector2 _leaveVelocity;
+    private EffectsAudioControl _effectsAudioControl;
     public SpriteRenderer mySprite;
     public Sprite dashing;
 
@@ -23,6 +24,7 @@ public class PanelMove : MonoBehaviour
     {
         _rb = gameObject.GetComponent<Rigidbody2D>();
         _movementScript = gameObject.GetComponent<CharacterMovement>();
+        _effectsAudioControl = GetComponentInChildren<EffectsAudioControl>();
     }
 
     // Update is called once per frame
@@ -30,7 +32,6 @@ public class PanelMove : MonoBehaviour
     {
         if (InPanel)
         {
-            //etSize(1);
             //reenable movement
             if (!_movementScript.enabled)
             {
@@ -45,7 +46,6 @@ public class PanelMove : MonoBehaviour
         }
         else
         {
-            //setSize(2);
             //disable player movement script
 
             if (_movementScript.enabled)
@@ -55,7 +55,7 @@ public class PanelMove : MonoBehaviour
 
                 //boost
                 //_rb.linearVelocity = _rb.linearVelocity.normalized * 10;
-                _rb.linearVelocity = leaveVelocity * 15;
+                _rb.linearVelocity = _leaveVelocity * 15;
 
                 _rb.gravityScale = 0;
                 _rb.linearDamping = 0;
@@ -70,7 +70,7 @@ public class PanelMove : MonoBehaviour
     {
         //change size gradually to target size
         spriteTransform.localScale = Vector3.Lerp(spriteTransform.localScale, new Vector3(targetSize, targetSize),
-        Time.deltaTime * 10);
+            Time.deltaTime * 10);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -86,36 +86,37 @@ public class PanelMove : MonoBehaviour
     {
         //moving out of panel
         //Instantiate(ripEffect, transform.position, Quaternion.identity);
+        InPanel = false;
+        currentPanel = null;
+        if (transform.position.x > other.transform.position.x + other.transform.localScale.x / 2.2f)
+        {
+            _leaveVelocity = new Vector2(1, 0);
+        }
+        else if (transform.position.x < other.transform.position.x - other.transform.localScale.x / 2.2f)
+        {
+            _leaveVelocity = new Vector2(-1, 0);
+        }
+
 
         InPanel = false;
         currentPanel = null;
-        if(transform.position.x > other.transform.position.x + other.transform.localScale.x / 2.2f){
-            leaveVelocity = new Vector2(1, 0);
+        if (transform.position.x > other.transform.position.x + other.transform.localScale.x / 2.2f)
+        {
+            _leaveVelocity = new Vector2(1, 0);
         }
-        else if(transform.position.x < other.transform.position.x - other.transform.localScale.x / 2.2f){
-            leaveVelocity = new Vector2(-1, 0);
+        else if (transform.position.x < other.transform.position.x - other.transform.localScale.x / 2.2f)
+        {
+            _leaveVelocity = new Vector2(-1, 0);
         }
 
-
-
-            InPanel = false;
-            currentPanel = null;
-            if (transform.position.x > other.transform.position.x + other.transform.localScale.x / 2.2f)
-            {
-                leaveVelocity = new Vector2(1, 0);
-            }
-            else if (transform.position.x < other.transform.position.x - other.transform.localScale.x / 2.2f)
-            {
-                leaveVelocity = new Vector2(-1, 0);
-            }
-
-            if (transform.position.y > other.transform.position.y + other.transform.localScale.y / 2.2f)
-            {
-                leaveVelocity = new Vector2(0, 1);
-            }
-            else if (transform.position.y < other.transform.position.y - other.transform.localScale.y / 2.2f)
-            {
-                leaveVelocity = new Vector2(0, -1);
-            }
+        if (transform.position.y > other.transform.position.y + other.transform.localScale.y / 2.2f)
+        {
+            _leaveVelocity = new Vector2(0, 1);
         }
+        else if (transform.position.y < other.transform.position.y - other.transform.localScale.y / 2.2f)
+        {
+            _leaveVelocity = new Vector2(0, -1);
+        }
+        _effectsAudioControl.PlayCollisionSound("Panel");
     }
+}

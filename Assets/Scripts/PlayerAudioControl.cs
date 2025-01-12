@@ -6,94 +6,66 @@ using UnityEngine.Audio;
 
 public class PlayerAudioControl : MonoBehaviour
 {
-    [SerializeField] private AudioResource walkSound;
-
     [SerializeField] private AudioClip jumpSound;
-
     [SerializeField] private AudioClip dashSound;
-    private CharacterMovement characterMovement;
-    private AudioSource audioSource;
-    private bool jumpPlayed;
-    private bool dashPlayed;
-    private bool walkPlayed;
+    private CharacterMovement _characterMovement;
+    private AudioSource _walkingSource;
+    private AudioSource _dashAndJumpSource;
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.playOnAwake = false;
-        audioSource.Stop();
-        audioSource.resource = walkSound;
-        audioSource.loop = true;
+        _walkingSource = GetComponents<AudioSource>()[0];
+        _dashAndJumpSource = GetComponents<AudioSource>()[1];
+        _walkingSource.playOnAwake = false;
+        _walkingSource.Stop();
+        _walkingSource.loop = true;
     }
 
     void Start()
     {
-        characterMovement = GetComponent<CharacterMovement>();
-        jumpPlayed = false;
-        dashPlayed = false;
-        walkPlayed = false;
+        _characterMovement = transform.parent.GetComponent<CharacterMovement>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // if (!characterMovement.isActiveAndEnabled)
-        // {
-        //     audioSource.Stop();
-        //     return;
-        // }
-
-        if (characterMovement.isWalking && !characterMovement.isDashing)
+        if (_characterMovement.IsWalking && !_characterMovement.IsDashing)
         {
-            PlaySound("Walk");
+            PlayWalkSound();
         }
-        else if (characterMovement.isDashing)
+        else if (_walkingSource.isPlaying)
+        {
+            _walkingSource.Stop();
+        }
+
+        if (_characterMovement.CanDash && Input.GetKeyDown(KeyCode.LeftShift))
         {
             PlaySound("Dash");
         }
-        else if (characterMovement.isJumping)
+        else if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && _characterMovement.CanJump)
         {
             PlaySound("Jump");
         }
-        else if (walkPlayed && !jumpPlayed && !dashPlayed)
+    }
+
+    private void PlayWalkSound()
+    {
+        if (_walkingSource.isPlaying)
         {
-            audioSource.Stop();
-            walkPlayed = false;
+            return;
         }
+        _walkingSource.Play();
     }
 
     private void PlaySound(string soundName)
     {
-        if (audioSource.isPlaying)
-            return;
         // should be using enum but whatever
-        if (soundName == "Jump" && !jumpPlayed)
+        if (soundName == "Jump")
         {
-            audioSource.PlayOneShot(jumpSound);
-            StartCoroutine(TimeOutJump(0.5f));
+            _dashAndJumpSource.PlayOneShot(jumpSound);
         }
-        else if (soundName == "Dash" && !dashPlayed)
+        else if (soundName == "Dash")
         {
-            audioSource.PlayOneShot(dashSound);
-            StartCoroutine(TimeOutDash(0.8f));
-        } else if (soundName == "Walk" && !jumpPlayed && !dashPlayed)
-        {
-            walkPlayed = true;
-            audioSource.Play();
+            _dashAndJumpSource.PlayOneShot(dashSound);
         }
-    }
-
-    private IEnumerator TimeOutJump(float seconds)
-    {
-        jumpPlayed = true;
-        yield return new WaitForSeconds(seconds);
-        jumpPlayed = false;
-    }
-
-    private IEnumerator TimeOutDash(float seconds)
-    {
-        dashPlayed = true;
-        yield return new WaitForSeconds(seconds);
-        dashPlayed = false;
     }
 }

@@ -1181,9 +1181,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bangEffect: {fileID: 7525248515448733858, guid: 7829722ae378049adb67e941582b2fb5, type: 3}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   ThoughtShotSpeed: 15
   ThoughtRotationSpeed: 300
   mySprite: {fileID: 1243038006}
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 --- !u!1 &714398999
