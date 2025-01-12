@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: f2f7d381a71088f458d9fb25b8aacdaf
+guid: 7802d6ae561344ceaab856f494bcdf2e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6344519460863217632
-    second: IMG_6424_0
+      213: -901901565778205758
+    second: Poof_0
+  - first:
+      213: 1575910984941813709
+    second: Poof_1
+  - first:
+      213: 2182998810026982320
+    second: Poof_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +119,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_6424_0
+      name: Poof_0
       rect:
         serializedVersion: 2
-        x: 311
-        y: 49
-        width: 131
-        height: 116
+        x: 108
+        y: 145
+        width: 605
+        height: 372
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ef0e4fb5d24c0850800000000000000
-      internalID: 6344519460863217632
+      spriteID: 2c3eb6ded4dcb73f0800000000000000
+      internalID: -901901565778205758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof_1
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 159
+        width: 162
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcfb717f0b2ced510800000000000000
+      internalID: 1575910984941813709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof_2
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 159
+        width: 275
+        height: 292
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bb32c80ad19b4e10800000000000000
+      internalID: 2182998810026982320
       vertices: []
       indices: 
       edges: []
@@ -138,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e54f1db8ce60b4763aad11fa4df2e599
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_6424_0: 6344519460863217632
+      Poof_0: -901901565778205758
+      Poof_1: 1575910984941813709
+      Poof_2: 2182998810026982320
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

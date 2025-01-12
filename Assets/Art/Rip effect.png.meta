@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f2f7d381a71088f458d9fb25b8aacdaf
+guid: 678735edd33f24ffa941968e03640702
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6344519460863217632
-    second: IMG_6424_0
+      213: 5022899512033980925
+    second: Rip effect_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_6424_0
+      name: Rip effect_0
       rect:
         serializedVersion: 2
-        x: 311
-        y: 49
-        width: 131
-        height: 116
+        x: 270
+        y: 26
+        width: 273
+        height: 669
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ef0e4fb5d24c0850800000000000000
-      internalID: 6344519460863217632
+      spriteID: df1b4456e7ce4b540800000000000000
+      internalID: 5022899512033980925
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_6424_0: 6344519460863217632
+      Rip effect_0: 5022899512033980925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

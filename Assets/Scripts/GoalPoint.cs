@@ -8,7 +8,7 @@ public class GoalPoint : MonoBehaviour
     void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _spriteRenderer.color = SceneManagement.Instance.ConvertToColorValues(currentGoalColor);
+        //_spriteRenderer.color = SceneManagement.Instance.ConvertToColorValues(currentGoalColor);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
