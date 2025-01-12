@@ -51,8 +51,8 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         inputX = Input.GetAxisRaw("Horizontal");
-        float deltaX = inputX * speed;
 
+        float deltaX = inputX * speed;
         //jumping
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumpTime > 0)
         {
