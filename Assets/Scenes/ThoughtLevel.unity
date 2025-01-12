@@ -13352,8 +13352,8 @@ Transform:
   m_GameObject: {fileID: 1824755966}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.56, y: 6.5, z: 0}
-  m_LocalScale: {x: 0.14402355, y: 0.3658659, z: 1}
+  m_LocalPosition: {x: 0.19, y: 7.009, z: 0}
+  m_LocalScale: {x: 0.16609532, y: 0.43304288, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1821085274}
@@ -13393,8 +13393,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bangEffect: {fileID: 7525248515448733858, guid: 7829722ae378049adb67e941582b2fb5, type: 3}
-  ThoughtShotSpeed: 15
-  ThoughtRotationSpeed: 300
   mySprite: {fileID: 705639643}
 --- !u!114 &1863033883
 MonoBehaviour:

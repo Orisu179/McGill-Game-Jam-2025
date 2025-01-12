@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: da5431f071e01154382c5c165c5570c3
+guid: 7e02dd84aab2741518e5a5e656121a53
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3666906391667505966
-    second: IMG_6510_0
+      213: -2640615170776336498
+    second: sewer_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_6510_0
+      name: sewer_0
       rect:
         serializedVersion: 2
-        x: 322
-        y: 285
-        width: 180
-        height: 109
+        x: 406
+        y: 2179
+        width: 1096
+        height: 183
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e2b73f36fe773e230800000000000000
-      internalID: 3666906391667505966
+      spriteID: e877e552e76aa5bd0800000000000000
+      internalID: -2640615170776336498
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      IMG_6510_0: 3666906391667505966
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
