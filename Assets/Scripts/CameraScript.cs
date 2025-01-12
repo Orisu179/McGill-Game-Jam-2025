@@ -14,6 +14,7 @@ public class CameraScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        transform.position = player.transform.position;
         _camera = gameObject.GetComponent<Camera>();
         _panelMove = player.GetComponent<PanelMove>();
     }

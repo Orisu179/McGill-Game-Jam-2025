@@ -12,6 +12,7 @@ public class MechanicInteraction : MonoBehaviour
     public float ThoughtRotationSpeed;
     public Transform mySprite;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _startPos = transform.position;
@@ -71,18 +72,13 @@ public class MechanicInteraction : MonoBehaviour
             transform.position = other.transform.position;
             _audioControl.PlayCollisionSound("Bubble");
         }
-        else if (other.gameObject.CompareTag("Thought"))
-        {
-            inThought = true;
-            transform.position = other.gameObject.transform.position;
-            _rb.gravityScale = 0;
-			_bc.enabled = false;
-            _audioControl.PlayCollisionSound("Thought");
-        }
-        else if (other.gameObject.CompareTag("Border"))
+        else if (other.gameObject.tag == "Border")
         {
             transform.position = _startPos;
-            _audioControl.PlayCollisionSound("Border");
+        }
+        else if (other.gameObject.tag == "Portal")
+        {
+
         }
     }
 }

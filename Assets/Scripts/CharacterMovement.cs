@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -32,10 +33,11 @@ public class CharacterMovement : MonoBehaviour
     public bool isGrounded;
     public Transform playerSprite;
 
-    public bool CanJump => _extraJumpTime > 0;
-    public bool IsDashing => _isDashing;
-    public bool CanDash => _canDash;
-    public bool IsWalking => (isGrounded && Math.Abs(_rb.linearVelocityX) > 0.001f);
+    public bool canJump => _extraJumpTime > 0;
+    public bool isDashing => _isDashing;
+    public bool canDash => _canDash;
+    public bool isWalking => (isGrounded && Math.Abs(_rb.linearVelocityX) > 0.001f);
+    public bool isJumping => !isGrounded && _rb.linearVelocityY > 0;
 
     void Start()
     {
@@ -55,6 +57,7 @@ public class CharacterMovement : MonoBehaviour
         //jumping
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumpTime > 0)
         {
+            //play jump sound effect
             _rb.linearVelocity = new Vector3(_rb.linearVelocityX, jumpForce);
             playerSprite.localScale = new Vector3(0.13f, 0.28f);
         }
