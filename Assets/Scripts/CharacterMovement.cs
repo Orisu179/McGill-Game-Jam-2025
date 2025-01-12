@@ -128,7 +128,7 @@ public class CharacterMovement : MonoBehaviour
         }
         else if (isGrounded)
         {
-            _rb.gravityScale = 0.5f;
+            _rb.gravityScale = 0.4f;
         }
         else
         {

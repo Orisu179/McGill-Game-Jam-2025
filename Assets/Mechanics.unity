@@ -1180,9 +1180,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bangEffect: {fileID: 7525248515448733858, guid: 7829722ae378049adb67e941582b2fb5, type: 3}
+<<<<<<< Updated upstream
   ThoughtShotSpeed: 15
   ThoughtRotationSpeed: 300
   mySprite: {fileID: 1243038006}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &714398999
 GameObject:
   m_ObjectHideFlags: 0

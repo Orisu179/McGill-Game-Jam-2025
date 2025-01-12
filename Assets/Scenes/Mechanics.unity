@@ -3274,6 +3274,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bangEffect: {fileID: 7525248515448733858, guid: 7829722ae378049adb67e941582b2fb5, type: 3}
+  ThoughtShotSpeed: 0
+  ThoughtRotationSpeed: 0
+  mySprite: {fileID: 1243038006}
 --- !u!1 &714398999
 GameObject:
   m_ObjectHideFlags: 0

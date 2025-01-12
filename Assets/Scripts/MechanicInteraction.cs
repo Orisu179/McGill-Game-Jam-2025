@@ -65,6 +65,7 @@ public class MechanicInteraction : MonoBehaviour
         }
         else if(other.gameObject.tag == "Bubble"){
             _rb.linearVelocity = new Vector2(_rb.linearVelocityX, 12);
+            transform.position = other.transform.position;
         }
         else if (other.gameObject.tag == "Thought")
         {
