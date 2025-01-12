@@ -22,7 +22,7 @@ public class MechanicInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /*
         if(inThought){
             transform.Rotate(0,0,ThoughtRotationSpeed*Time.deltaTime);
             
@@ -38,7 +38,7 @@ public class MechanicInteraction : MonoBehaviour
         else
         {
             lerpRotate(mySprite, 0, 5);
-        }
+        }*/
     }
 	
 	private IEnumerator wait()
@@ -65,6 +65,7 @@ public class MechanicInteraction : MonoBehaviour
         }
         else if(other.gameObject.tag == "Bubble"){
             _rb.linearVelocity = new Vector2(_rb.linearVelocityX, 12);
+            transform.position = other.transform.position;
         }
         else if (other.gameObject.tag == "Thought")
         {
