@@ -29,6 +29,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Pause.unity
     guid: 338b1ff287d7b724db9e5b40064fa44e
+  - enabled: 1
+    path: Assets/Scenes/super Hue.unity
+    guid: c78fb66743ca84aa594423d5f0729dbb
+  - enabled: 1
+    path: Assets/Scenes/Portal.unity
+    guid: 367b89c1dd95843b9807e37bc6c6abdc
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 7da573a73aed664428b97984816516b0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
