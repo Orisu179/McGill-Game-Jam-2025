@@ -35,7 +35,7 @@ public class EffectsAudioControl : MonoBehaviour
         _audioMap.Add("Panel", transportSound);
         _audioMap.Add("Finish", finishLevelSound);
         _audioMap.Add("NewLevel", newLevelSound);
-        // _audioMap.Add("Portal", portalSound);
+        _audioMap.Add("Portal", portalSound);
         // add back in once portal sound is done
     }
     public void PlayCollisionSound(string collisionString)

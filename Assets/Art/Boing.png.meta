@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: da5431f071e01154382c5c165c5570c3
+guid: d0dde8426a14f43f09ec6e0ecc06abeb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3666906391667505966
-    second: IMG_6510_0
+      213: 2789724332614696245
+    second: Boing_0
+  - first:
+      213: 6974454127655948144
+    second: Boing_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +116,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_6510_0
+      name: Boing_0
       rect:
         serializedVersion: 2
-        x: 322
-        y: 285
-        width: 180
-        height: 109
+        x: 40
+        y: 50
+        width: 700
+        height: 448
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e2b73f36fe773e230800000000000000
-      internalID: 3666906391667505966
+      spriteID: 53d33caff7717b620800000000000000
+      internalID: 2789724332614696245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boing_1
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 73
+        width: 297
+        height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07f803da31d3ac060800000000000000
+      internalID: 6974454127655948144
       vertices: []
       indices: 
       edges: []
@@ -138,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 788d6dd429e57482c82c4318ad9d80fe
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_6510_0: 3666906391667505966
+      Boing_0: 2789724332614696245
+      Boing_1: 6974454127655948144
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
