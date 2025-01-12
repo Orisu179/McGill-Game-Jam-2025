@@ -30,10 +30,7 @@ public class CameraScript : MonoBehaviour
 
             _targetPosition = player.transform.position;
 
-            if (!MechanicInteraction.inThought)
-            {
-                CameraPanelSize = 7;
-            }
+            CameraPanelSize = 7;
             
         }
         else
