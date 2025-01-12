@@ -5,11 +5,13 @@ using UnityEngine;
 public class KeyScript : MonoBehaviour
 {
     public GameObject lockObject;
+    [SerializeField] private GameObject keyEffect;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         CameraScript.Shake(1);
         var soundPlayer = other.transform.GetComponentInChildren<EffectsAudioControl>();
+        Instantiate(keyEffect, transform.position, Quaternion.identity);
         StartCoroutine(DoorAndKeySound(soundPlayer));
     }
 

@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31f62a753548604483d0c656a592847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boomSound: {fileID: 8300000, guid: 0dcc54cd34b16bf43bda846ea5ce5d70, type: 3}
+  boomSound: {fileID: 8300000, guid: 8528e5f5a117de64492d56f391ad6e13, type: 3}
   poofSound: {fileID: 8300000, guid: 14c511db5b3ff5942bcd93231b30b0b9, type: 3}
   resetSound: {fileID: 8300000, guid: d124bb88904463e4bbd6e6ff421e76ac, type: 3}
   pickingUpKeySound: {fileID: 8300000, guid: ff0838950406c3441a842f53c4d3f5d8, type: 3}

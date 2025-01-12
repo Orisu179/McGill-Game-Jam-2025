@@ -6801,8 +6801,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c07f1b994b54337a1e836e09426140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupEffect: {fileID: 8201943554529895030, guid: a68091c34b85d445f8cc5732878a815d, type: 3}
   lockObject: {fileID: 2098520217}
+  keyEffect: {fileID: 8201943554529895030, guid: a68091c34b85d445f8cc5732878a815d, type: 3}
 --- !u!212 &1296537791
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9107,8 +9107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c07f1b994b54337a1e836e09426140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupEffect: {fileID: 8201943554529895030, guid: a68091c34b85d445f8cc5732878a815d, type: 3}
   lockObject: {fileID: 1805359274}
+  keyEffect: {fileID: 8201943554529895030, guid: a68091c34b85d445f8cc5732878a815d, type: 3}
 --- !u!212 &1545000975
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16519,6 +16519,8 @@ MonoBehaviour:
   pickingUpKeySound: {fileID: 8300000, guid: ff0838950406c3441a842f53c4d3f5d8, type: 3}
   openDoorSound: {fileID: 8300000, guid: b1724de1e440aac4fa72b4b2364fc66a, type: 3}
   transportSound: {fileID: 8300000, guid: 0e13ded49c19b7c4883bc08b77bc5f91, type: 3}
+  finishLevelSound: {fileID: 0}
+  newLevelSound: {fileID: 0}
   portalSound: {fileID: 0}
 --- !u!114 &2066664504
 MonoBehaviour:
@@ -16533,7 +16535,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSound: {fileID: 8300000, guid: be9d49ef07f2baa48a974eda76c6b434, type: 3}
-  dashSound: {fileID: 8300000, guid: 9d84c2958e767417097610732aecd49d, type: 3}
+  airDashSound: {fileID: 0}
+  groundDashSound: {fileID: 0}
 --- !u!82 &2066664505
 AudioSource:
   m_ObjectHideFlags: 0
