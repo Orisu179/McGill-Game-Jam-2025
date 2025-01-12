@@ -10,6 +10,7 @@ TagManager:
   - Border
   - Booster
   - Portal
+  - Transition
   layers:
   - Default
   - TransparentFX

@@ -14,6 +14,20 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-7899721677333634112
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: dc65909eaec1edb4098dbe08c704ae4d
+  m_EffectName: Attenuation
+  m_MixLevel: d0fcea5a745a8764481d1fef0e3e790c
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-7162857981307040515
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -59,12 +73,32 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: 4724135844214126029}
   - {fileID: -7148454829106127904}
+  - {fileID: -1155090539695491411}
   m_Volume: 2f908b73fe46116408288378251a4279
   m_Pitch: 07255aa2d74f7ea4eac8c2f59fe46d25
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: -9075491690150013023}
   - {fileID: 2738902125674932524}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &-1155090539695491411
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Object Effects
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 34dcb6e24d2d8c245a1de5309f5d14ac
+  m_Children: []
+  m_Volume: c9d465a8fc66d8a4380a03c0ed073b6a
+  m_Pitch: 008c86f41433ff94abce4954f1f482f5
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -7899721677333634112}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -87,11 +121,11 @@ AudioMixerController:
   m_ExposedParameters: []
   m_AudioMixerGroupViews:
   - guids:
-    - d78a92ea80e8fa14998bc5c87c997ef9
     - 09b26c13c7ca9094095aa2d7dd0ae0dc
     - 78923ae646b703546bfc79d77b740c20
-    - 7b4a6ab3d2d3ae343bd343fb66b15c7b
     - 811e69a6875fdcc4da980c003a76f5d1
+    - 7b4a6ab3d2d3ae343bd343fb66b15c7b
+    - 34dcb6e24d2d8c245a1de5309f5d14ac
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -141,15 +175,17 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 5b275f95e3a4f6c44bfd3260f1674312
   m_FloatValues:
+    dc07df701544408419d6e0d091038c91: 5.050066
     8a4d1ee0e7177ca47820c97f2960e171: -80
     02ff94f010b156a4babf352663db6b59: 46
-    9ddafc018ed511542a711ff0baaa5fa9: -13.0627575
+    9ddafc018ed511542a711ff0baaa5fa9: -14.458579
     922be832119931d4c8206a89e886b6a5: -13.2
     c59d2e827debc654bb3e3e71bb68cdf4: -16.4
     07255aa2d74f7ea4eac8c2f59fe46d25: 1
     e2e06943cee87424eb9d7dcfed349497: 1.44
     2f908b73fe46116408288378251a4279: -8.553547
     4e6010174fc3dab4d88044ef64f6cae7: 13
+    c9d465a8fc66d8a4380a03c0ed073b6a: -11.834944
     836290c89bdd2594e930279f644dd727: 3.4
     6eee34e8875548a4faa3554dd50686c2: 59
     065eb009d255300419526defcda24bf9: -39.621014

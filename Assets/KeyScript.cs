@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class KeyScript : MonoBehaviour
 {
-    public GameObject pickupEffect;
     public GameObject lockObject;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Instantiate(pickupEffect, transform.position, Quaternion.identity);
         CameraScript.Shake(1);
-        //var soundPlayer = other.transform.GetComponentInChildren<EffectsAudioControl>();
-        //StartCoroutine(DoorAndKeySound(soundPlayer));
-        Destroy(lockObject);
-        Destroy(gameObject);
+        var soundPlayer = other.transform.GetComponentInChildren<EffectsAudioControl>();
+        StartCoroutine(DoorAndKeySound(soundPlayer));
     }
 
     private IEnumerator DoorAndKeySound(EffectsAudioControl controller)
     {
         controller.PlayCollisionSound("Key");
+        lockObject.GetComponent<SpriteRenderer>().enabled = false;
+        lockObject.GetComponent<BoxCollider2D>().enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
         yield return new WaitForSeconds(0.5f);
         controller.PlayCollisionSound("Door");
         Destroy(lockObject);

@@ -11,14 +11,17 @@ public class EffectsAudioControl : MonoBehaviour
     [SerializeField] private AudioClip pickingUpKeySound;
     [SerializeField] private AudioClip openDoorSound;
     [SerializeField] private AudioClip transportSound;
+    [SerializeField] private AudioClip finishLevelSound;
+    [SerializeField] private AudioClip newLevelSound;
     [SerializeField] private AudioClip portalSound;
+
     private Dictionary<string, AudioClip> _audioMap;
     private AudioSource _effectSource;
 
     private void Start()
     {
         _audioMap = new Dictionary<string, AudioClip>();
-        _effectSource = GetComponents<AudioSource>()[1];
+        _effectSource = GetComponents<AudioSource>()[2];
         GenerateAudioMap();
     }
 
@@ -30,7 +33,9 @@ public class EffectsAudioControl : MonoBehaviour
         _audioMap.Add("Key", pickingUpKeySound);
         _audioMap.Add("Door", openDoorSound);
         _audioMap.Add("Panel", transportSound);
-        // _audioMap.Add("Portal", portalSound);
+        _audioMap.Add("Finish", finishLevelSound);
+        _audioMap.Add("NewLevel", newLevelSound);
+        _audioMap.Add("Portal", portalSound);
         // add back in once portal sound is done
     }
     public void PlayCollisionSound(string collisionString)

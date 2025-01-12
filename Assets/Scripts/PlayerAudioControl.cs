@@ -7,7 +7,8 @@ using UnityEngine.Audio;
 public class PlayerAudioControl : MonoBehaviour
 {
     [SerializeField] private AudioClip jumpSound;
-    [SerializeField] private AudioClip dashSound;
+    [SerializeField] private AudioClip airDashSound;
+    [SerializeField] private AudioClip groundDashSound;
     private CharacterMovement _characterMovement;
     private AudioSource _walkingSource;
     private AudioSource _dashAndJumpSource;
@@ -65,7 +66,10 @@ public class PlayerAudioControl : MonoBehaviour
         }
         else if (soundName == "Dash")
         {
-            _dashAndJumpSource.PlayOneShot(dashSound);
+            if(_characterMovement.isGrounded)
+                _dashAndJumpSource.PlayOneShot(groundDashSound);
+            else
+                _dashAndJumpSource.PlayOneShot(airDashSound);
         }
     }
 }

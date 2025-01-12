@@ -1,8 +1,23 @@
+using System;
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private AudioClip[] levelMusics;
+    public static MusicManager Instance;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         

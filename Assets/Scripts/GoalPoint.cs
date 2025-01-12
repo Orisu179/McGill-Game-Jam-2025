@@ -6,8 +6,9 @@ public class GoalPoint : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private SceneManagement.GoalColors currentGoalColor;
+    [SerializeField] private GameObject effect;
     private bool doneLevel;
-    public GameObject effect;
+    private EffectsAudioControl _effectsAudioControl;
     void Start()
     {
         //_spriteRenderer.color = SceneManagement.Instance.ConvertToColorValues(currentGoalColor);
@@ -15,15 +16,24 @@ public class GoalPoint : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+           _effectsAudioControl = collision.gameObject.GetComponentInChildren<EffectsAudioControl>();
+        }
         if(!doneLevel){
-            StartCoroutine(endLevel());
+            StartCoroutine(EndLevel());
             doneLevel = true;
         }
     }
 
-    IEnumerator endLevel(){
+    private IEnumerator EndLevel(){
         CameraScript.Shake(2);
         Instantiate(effect, transform.position, Quaternion.identity);
+        if (_effectsAudioControl != null)
+        {
+            _effectsAudioControl.PlayCollisionSound("Finish");
+            _effectsAudioControl.PlayCollisionSound("NewLevel");
+        }
         yield return new WaitForSeconds(2);
 
         // SceneManagement.Instance.FinishedCurrentColor(currentGoalColor);
