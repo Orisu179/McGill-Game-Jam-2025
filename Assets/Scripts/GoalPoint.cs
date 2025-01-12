@@ -8,8 +8,10 @@ public class GoalPoint : MonoBehaviour
     [SerializeField] private SceneManagement.GoalColors currentGoalColor;
     private bool doneLevel;
     public GameObject effect;
+    public Animation transition;
     void Start()
     {
+        transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Animation>();
         //_spriteRenderer.color = SceneManagement.Instance.ConvertToColorValues(currentGoalColor);
     }
 
@@ -24,7 +26,9 @@ public class GoalPoint : MonoBehaviour
     IEnumerator endLevel(){
         CameraScript.Shake(2);
         Instantiate(effect, transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
+        transition.Play();
+        yield return new WaitForSeconds(1);
 
         // SceneManagement.Instance.FinishedCurrentColor(currentGoalColor);
         Scene currentScene = SceneManager.GetActiveScene();
