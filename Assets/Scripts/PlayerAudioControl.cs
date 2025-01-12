@@ -1,8 +1,11 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerAudioControl : MonoBehaviour
 {
-    [SerializeField] private AudioClip walkSound;
+    [SerializeField] private AudioResource walkSound;
 
     [SerializeField] private AudioClip jumpSound;
 
@@ -10,10 +13,16 @@ public class PlayerAudioControl : MonoBehaviour
     private CharacterMovement characterMovement;
     private AudioSource audioSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Awake()
+    {
+       audioSource = GetComponent<AudioSource>();
+       audioSource.playOnAwake = false;
+       audioSource.Stop();
+    }
+
     void Start()
     {
        characterMovement = GetComponent<CharacterMovement>();
-       audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,13 +30,30 @@ public class PlayerAudioControl : MonoBehaviour
     {
         if (characterMovement.isWalking && !characterMovement.isDashing)
         {
-            if (audioSource.isPlaying)
+            if (!audioSource.isPlaying)
             {
-                audioSource.Stop();
+                PlayWalk();
             }
-            audioSource.clip = walkSound;
-            audioSource.loop = true;
-            audioSource.Play();
+        } else if (characterMovement.isDashing)
+        {
         }
+        else
+        {
+            audioSource.Stop();
+        }
+    }
+
+    private void PlaySound(string soundName)
+    {
+        if (soundName == "Walk")
+        {
+
+        }
+    }
+    private void PlayWalk()
+    {
+        audioSource.resource = walkSound;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 }

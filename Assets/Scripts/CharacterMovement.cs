@@ -36,7 +36,7 @@ public class CharacterMovement : MonoBehaviour
     public bool isJumping => (!isGrounded && _rb.linearVelocityY > 0);
 
     public bool isDashing => _isDashing;
-    public bool isWalking => (isGrounded && Mathf.Approximately(_rb.linearVelocityX, 0f));
+    public bool isWalking => (isGrounded && !Mathf.Approximately(_rb.linearVelocityX, 0f));
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
