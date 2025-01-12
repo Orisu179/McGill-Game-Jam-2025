@@ -5,24 +5,19 @@ public class MechanicInteraction : MonoBehaviour
 {
     private Rigidbody2D _rb;
     private Vector3 _startPos;
+    private EffectsAudioControl _audioControl;
     public GameObject bangEffect;
     public static bool inThought;
     public float ThoughtShotSpeed;
     public float ThoughtRotationSpeed;
     public Transform mySprite;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _startPos = transform.position;
         _rb = gameObject.GetComponent<Rigidbody2D>();
+        _audioControl = GetComponent<EffectsAudioControl>();
     }
-    
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Spring"){
