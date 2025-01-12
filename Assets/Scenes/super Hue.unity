@@ -696,7 +696,7 @@ AudioSource:
   m_GameObject: {fileID: 43491364}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4550606245530154618, guid: f0f0c743c2da82b48b5b6e2f37e8839f, type: 2}
   m_audioClip: {fileID: 8300000, guid: c04549933e1fd40be90e9552f18f0d17, type: 3}
   m_Resource: {fileID: 8300000, guid: c04549933e1fd40be90e9552f18f0d17, type: 3}
   m_PlayOnAwake: 1
@@ -5083,8 +5083,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bangEffect: {fileID: 7525248515448733858, guid: 7829722ae378049adb67e941582b2fb5, type: 3}
-  ThoughtShotSpeed: 0
-  ThoughtRotationSpeed: 0
   mySprite: {fileID: 2009983982}
 --- !u!114 &843866075
 MonoBehaviour:
