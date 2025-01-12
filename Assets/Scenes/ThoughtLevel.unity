@@ -7346,7 +7346,9 @@ MonoBehaviour:
   poofSound: {fileID: 8300000, guid: 14c511db5b3ff5942bcd93231b30b0b9, type: 3}
   thought: {fileID: 8300000, guid: 0e13ded49c19b7c4883bc08b77bc5f91, type: 3}
   resetSound: {fileID: 8300000, guid: d124bb88904463e4bbd6e6ff421e76ac, type: 3}
-  pickingUpSound: {fileID: 8300000, guid: c765ac7feef0aef46a5f175ec66a4aa7, type: 3}
+  pickingUpKeySound: {fileID: 8300000, guid: ff0838950406c3441a842f53c4d3f5d8, type: 3}
+  openDoorSound: {fileID: 8300000, guid: b1724de1e440aac4fa72b4b2364fc66a, type: 3}
+  transportSound: {fileID: 8300000, guid: 0e13ded49c19b7c4883bc08b77bc5f91, type: 3}
 --- !u!114 &682233778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7373,7 +7375,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4724135844214126029, guid: f0f0c743c2da82b48b5b6e2f37e8839f, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
