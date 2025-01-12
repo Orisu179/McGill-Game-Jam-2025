@@ -28,7 +28,12 @@ public class CameraScript : MonoBehaviour
             //not in a panel
 
             _targetPosition = player.transform.position;
-            CameraPanelSize = 7;
+
+            if (!MechanicInteraction.inThought)
+            {
+                CameraPanelSize = 7;
+            }
+            
         }
         else
         {

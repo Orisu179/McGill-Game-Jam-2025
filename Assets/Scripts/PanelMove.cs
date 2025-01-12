@@ -17,7 +17,6 @@ public class PanelMove : MonoBehaviour
     private Vector2 leaveVelocity;
     public SpriteRenderer mySprite;
     public Sprite dashing;
-    public GameObject ripEffect;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -80,13 +79,13 @@ public class PanelMove : MonoBehaviour
         InPanel = true;
         currentPanel = other.transform;
         CameraScript.CameraPanelSize = other.GetComponent<PanelInfo>().size;
-        Instantiate(ripEffect, transform.position, Quaternion.identity);
+        //Instantiate(ripEffect, transform.position, Quaternion.identity);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         //moving out of panel
-        Instantiate(ripEffect, transform.position, Quaternion.identity);
+        //Instantiate(ripEffect, transform.position, Quaternion.identity);
 
         InPanel = false;
         currentPanel = null;
@@ -97,11 +96,26 @@ public class PanelMove : MonoBehaviour
             leaveVelocity = new Vector2(-1, 0);
         }
 
-        if(transform.position.y > other.transform.position.y + other.transform.localScale.y / 2.2f){
-            leaveVelocity = new Vector2(0, 1);
-        }
-        else if(transform.position.y < other.transform.position.y - other.transform.localScale.y / 2.2f){
-            leaveVelocity = new Vector2(0, -1);
+
+
+            InPanel = false;
+            currentPanel = null;
+            if (transform.position.x > other.transform.position.x + other.transform.localScale.x / 2.2f)
+            {
+                leaveVelocity = new Vector2(1, 0);
+            }
+            else if (transform.position.x < other.transform.position.x - other.transform.localScale.x / 2.2f)
+            {
+                leaveVelocity = new Vector2(-1, 0);
+            }
+
+            if (transform.position.y > other.transform.position.y + other.transform.localScale.y / 2.2f)
+            {
+                leaveVelocity = new Vector2(0, 1);
+            }
+            else if (transform.position.y < other.transform.position.y - other.transform.localScale.y / 2.2f)
+            {
+                leaveVelocity = new Vector2(0, -1);
+            }
         }
     }
-}

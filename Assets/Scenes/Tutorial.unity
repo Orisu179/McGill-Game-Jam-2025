@@ -1454,6 +1454,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bangEffect: {fileID: 7525248515448733858, guid: 7829722ae378049adb67e941582b2fb5, type: 3}
+  ThoughtShotSpeed: 0
+  ThoughtRotationSpeed: 0
+  mySprite: {fileID: 0}
 --- !u!114 &783564809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,7 +1473,6 @@ MonoBehaviour:
   spriteTransform: {fileID: 739949960}
   mySprite: {fileID: 1189683016}
   dashing: {fileID: -4497646796560915508, guid: 076a829d433bd495fa7b3c0c431d291d, type: 3}
-  ripEffect: {fileID: 7007899116397256616, guid: 470d7164e00354ccd983e9c3b7924dce, type: 3}
 --- !u!61 &783564810
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4045,7 +4047,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.779587, g: 0.8243428, b: 0.8415094, a: 1}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
