@@ -9,10 +9,6 @@ public class GoalPoint : MonoBehaviour
     [SerializeField] private GameObject effect;
     private bool doneLevel;
     private EffectsAudioControl _effectsAudioControl;
-    void Start()
-    {
-        //_spriteRenderer.color = SceneManagement.Instance.ConvertToColorValues(currentGoalColor);
-    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -35,7 +31,7 @@ public class GoalPoint : MonoBehaviour
             _effectsAudioControl.PlayCollisionSound("NewLevel");
         }
 
-        yield return null;
+        yield return new WaitForSeconds(2.0f);
 
         // SceneManagement.Instance.FinishedCurrentColor(currentGoalColor);
         Scene currentScene = SceneManager.GetActiveScene();
@@ -51,9 +47,6 @@ public class GoalPoint : MonoBehaviour
         }
         else if(currentScene.name == "ThoughtLevel"){
             SceneManager.LoadScene("super Hue");
-        }
-        else if(currentScene.name == "super Hue"){
-            SceneManager.LoadScene("Portal");
         }
         else if(currentScene.name == "super Hue"){
             SceneManager.LoadScene("Ending");

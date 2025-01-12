@@ -37,7 +37,7 @@ public class SceneManagement : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this);
 
 
         _sceneCounter = 1;
