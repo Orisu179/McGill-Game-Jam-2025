@@ -34,7 +34,8 @@ public class GoalPoint : MonoBehaviour
             _effectsAudioControl.PlayCollisionSound("Finish");
             _effectsAudioControl.PlayCollisionSound("NewLevel");
         }
-        yield return new WaitForSeconds(2);
+
+        yield return null;
 
         // SceneManagement.Instance.FinishedCurrentColor(currentGoalColor);
         Scene currentScene = SceneManager.GetActiveScene();
