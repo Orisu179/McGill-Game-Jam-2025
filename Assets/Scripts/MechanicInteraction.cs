@@ -72,11 +72,12 @@ public class MechanicInteraction : MonoBehaviour
             transform.position = other.transform.position;
             _audioControl.PlayCollisionSound("Bubble");
         }
-        else if (other.gameObject.tag == "Border")
+        else if (other.gameObject.CompareTag("Border"))
         {
             transform.position = _startPos;
+            _audioControl.PlayCollisionSound("Border");
         }
-        else if (other.gameObject.tag == "Portal")
+        else if (other.gameObject.CompareTag("Portal"))
         {
 
         }

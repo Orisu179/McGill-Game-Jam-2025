@@ -7,11 +7,11 @@ public class EffectsAudioControl : MonoBehaviour
 {
     [SerializeField] private AudioClip boomSound;
     [SerializeField] private AudioClip poofSound;
-    [SerializeField] private AudioClip thought;
     [SerializeField] private AudioClip resetSound;
     [SerializeField] private AudioClip pickingUpKeySound;
     [SerializeField] private AudioClip openDoorSound;
     [SerializeField] private AudioClip transportSound;
+    [SerializeField] private AudioClip portalSound;
     private Dictionary<string, AudioClip> _audioMap;
     private AudioSource _effectSource;
 
@@ -26,11 +26,12 @@ public class EffectsAudioControl : MonoBehaviour
     {
         _audioMap.Add("Spring", boomSound);
         _audioMap.Add("Bubble", poofSound);
-        _audioMap.Add("Thought", thought);
         _audioMap.Add("Border", resetSound);
         _audioMap.Add("Key", pickingUpKeySound);
         _audioMap.Add("Door", openDoorSound);
         _audioMap.Add("Panel", transportSound);
+        // _audioMap.Add("Portal", portalSound);
+        // add back in once portal sound is done
     }
     public void PlayCollisionSound(string collisionString)
     {
