@@ -11,11 +11,10 @@ public class KeyScript : MonoBehaviour
     {
         Instantiate(pickupEffect, transform.position, Quaternion.identity);
         CameraScript.Shake(1);
-        if (other.gameObject.CompareTag("Player"))
-        {
-            var soundPlayer = other.transform.GetComponentInChildren<EffectsAudioControl>();
-            StartCoroutine(DoorAndKeySound(soundPlayer));
-        }
+        //var soundPlayer = other.transform.GetComponentInChildren<EffectsAudioControl>();
+        //StartCoroutine(DoorAndKeySound(soundPlayer));
+        Destroy(lockObject);
+        Destroy(gameObject);
     }
 
     private IEnumerator DoorAndKeySound(EffectsAudioControl controller)
