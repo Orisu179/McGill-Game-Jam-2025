@@ -9,12 +9,12 @@ public class SceneManagement : MonoBehaviour
     public enum GoalColors
     {
         Violet = 1,
-        Indigo = 2,
-        Blue = 3,
-        Green = 4,
-        Yellow = 5,
-        Orange = 6,
-        Red = 7
+        // Indigo = 2,
+        Blue = 2,
+        // Green = 4,
+        Yellow = 3,
+        // Orange = 6,
+        Red = 4
     }
 
     private struct ColorData
@@ -40,7 +40,7 @@ public class SceneManagement : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
 
-        _sceneCounter = 2;
+        _sceneCounter = 1;
         _achievedColors = new Dictionary<GoalColors, ColorData>();
         InitColor();
     }
@@ -57,11 +57,11 @@ public class SceneManagement : MonoBehaviour
     {
         _achievedColors.Clear();
         _achievedColors.Add(GoalColors.Violet, new ColorData { Color = new Color(127, 0, 255), Eaten = false });
-        _achievedColors.Add(GoalColors.Indigo, new ColorData { Color = new Color(75, 0, 130), Eaten = false });
+        // _achievedColors.Add(GoalColors.Indigo, new ColorData { Color = new Color(75, 0, 130), Eaten = false });
         _achievedColors.Add(GoalColors.Blue, new ColorData { Color = Color.blue, Eaten = false });
-        _achievedColors.Add(GoalColors.Green, new ColorData { Color = Color.green, Eaten = false });
+        // _achievedColors.Add(GoalColors.Green, new ColorData { Color = Color.green, Eaten = false });
         _achievedColors.Add(GoalColors.Yellow, new ColorData { Color = Color.yellow, Eaten = false });
-        _achievedColors.Add(GoalColors.Orange, new ColorData { Color = new Color(255, 165, 0), Eaten = false });
+        // _achievedColors.Add(GoalColors.Orange, new ColorData { Color = new Color(255, 165, 0), Eaten = false });
         _achievedColors.Add(GoalColors.Red, new ColorData { Color = Color.red, Eaten = false });
     }
 
