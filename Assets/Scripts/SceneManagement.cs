@@ -40,7 +40,7 @@ public class SceneManagement : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
 
-        _sceneCounter = 0;
+        _sceneCounter = 2;
         _achievedColors = new Dictionary<GoalColors, ColorData>();
         InitColor();
     }

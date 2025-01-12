@@ -1297,6 +1297,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 398146469778723350, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 398146469778723350, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
       propertyPath: currentGoalColor
       value: 1
       objectReference: {fileID: 0}
@@ -1379,6 +1383,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7962249486793187811, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1520471860}
+    - targetCorrespondingSourceObject: {fileID: 7962249486793187811, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1520471861}
   m_SourcePrefab: {fileID: 100100000, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
 --- !u!1 &739949959
 GameObject:
@@ -1463,6 +1470,7 @@ MonoBehaviour:
   spriteTransform: {fileID: 739949960}
   mySprite: {fileID: 1189683016}
   dashing: {fileID: -4497646796560915508, guid: 076a829d433bd495fa7b3c0c431d291d, type: 3}
+  ripEffect: {fileID: 7007899116397256616, guid: 470d7164e00354ccd983e9c3b7924dce, type: 3}
 --- !u!61 &783564810
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1562,6 +1570,7 @@ MonoBehaviour:
   idleSprite: {fileID: 508239358, guid: ed8e436cc9094458f93449ea99d56811, type: 3}
   jump: {fileID: 7460046300004610927, guid: 06ca94b307d6a4623a645058786ece9b, type: 3}
   fall: {fileID: -5966621866309598838, guid: 683820e7bb2fe440f95ae35333309e40, type: 3}
+  isGrounded: 0
   playerSprite: {fileID: 1189683017}
 --- !u!212 &783564813
 SpriteRenderer:
@@ -3533,6 +3542,18 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!114 &1520471861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520471855}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fed40a50e33cfce4bac8651f40a52b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1569685579
 GameObject:
   m_ObjectHideFlags: 0

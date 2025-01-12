@@ -2187,6 +2187,7 @@ MonoBehaviour:
   spriteTransform: {fileID: 682170913}
   mySprite: {fileID: 176710591}
   dashing: {fileID: -4497646796560915508, guid: 076a829d433bd495fa7b3c0c431d291d, type: 3}
+  ripEffect: {fileID: 7007899116397256616, guid: 470d7164e00354ccd983e9c3b7924dce, type: 3}
 --- !u!61 &480428228
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2286,6 +2287,7 @@ MonoBehaviour:
   idleSprite: {fileID: 508239358, guid: ed8e436cc9094458f93449ea99d56811, type: 3}
   jump: {fileID: 7460046300004610927, guid: 06ca94b307d6a4623a645058786ece9b, type: 3}
   fall: {fileID: -5966621866309598838, guid: 683820e7bb2fe440f95ae35333309e40, type: 3}
+  isGrounded: 0
   playerSprite: {fileID: 176710592}
 --- !u!212 &480428231
 SpriteRenderer:
