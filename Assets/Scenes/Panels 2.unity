@@ -3506,7 +3506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSound: {fileID: 8300000, guid: be9d49ef07f2baa48a974eda76c6b434, type: 3}
-  dashSound: {fileID: 8300000, guid: 10d551e603f1c5d4d80586a2cac8eac1, type: 3}
+  dashSound: {fileID: 8300000, guid: 9d84c2958e767417097610732aecd49d, type: 3}
 --- !u!82 &747394543
 AudioSource:
   m_ObjectHideFlags: 0

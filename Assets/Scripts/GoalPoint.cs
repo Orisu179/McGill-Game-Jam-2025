@@ -38,6 +38,12 @@ public class GoalPoint : MonoBehaviour
         else if (currentScene.name == "Panels 2") {
             SceneManager.LoadScene("ThoughtLevel");
         }
+        else if(currentScene.name == "ThoughtLevel"){
+            SceneManager.LoadScene("super Hue");
+        }
+        else if(currentScene.name == "super Hue"){
+            SceneManager.LoadScene("Portal");
+        }
         // SceneManagement.Instance.LoadScene();
     }
 }
