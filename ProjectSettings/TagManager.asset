@@ -8,6 +8,7 @@ TagManager:
   - Bubble
   - Thought
   - Border
+  - Booster
   layers:
   - Default
   - TransparentFX

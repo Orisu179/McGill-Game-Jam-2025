@@ -3468,7 +3468,7 @@ GameObject:
   - component: {fileID: 649815670}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3654,7 +3654,7 @@ Transform:
   m_GameObject: {fileID: 649815663}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.91, y: -0.46, z: 0}
+  m_LocalPosition: {x: -20.5, y: -1.3, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4485,7 +4485,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7962249486793187811, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
   m_PrefabInstance: {fileID: 2124437345}
   m_PrefabAsset: {fileID: 0}
---- !u!111 &879214071
+--- !u!111 &879214075
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4494,9 +4494,9 @@ Animation:
   m_GameObject: {fileID: 879214070}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: b93905ab386e455438063cbd90a83926, type: 2}
+  m_Animation: {fileID: 7400000, guid: adeacb5e63b80467b8c36da8149328f4, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: b93905ab386e455438063cbd90a83926, type: 2}
+  - {fileID: 7400000, guid: adeacb5e63b80467b8c36da8149328f4, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -9892,6 +9892,30 @@ PrefabInstance:
       propertyPath: currentGoalColor
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 398146469778723350, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
+      propertyPath: animationFrames.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 398146469778723350, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
+      propertyPath: 'animationFrames.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8761186655450996743, guid: 902ae7d0124506e4388203dc57bad148, type: 3}
+    - target: {fileID: 398146469778723350, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
+      propertyPath: 'animationFrames.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2443035837308374491, guid: f9989d3c86924104391a080e86ecafc7, type: 3}
+    - target: {fileID: 398146469778723350, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
+      propertyPath: 'animationFrames.Array.data[2]'
+      value: 
+      objectReference: {fileID: -8241184522967965445, guid: e1684e74c01fc6444b0418c810f128b8, type: 3}
+    - target: {fileID: 398146469778723350, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
+      propertyPath: 'animationFrames.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5361191749045696461, guid: dcd3a8b6638c10a469cc0c8cafce19c1, type: 3}
+    - target: {fileID: 398146469778723350, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
+      propertyPath: 'animationFrames.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2631070857643824785, guid: 1100199180fdd544c9d3b6b7ea745e98, type: 3}
     - target: {fileID: 3733061459927172925, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -9970,7 +9994,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7962249486793187811, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 879214071}
+      addedObject: {fileID: 879214075}
   m_SourcePrefab: {fileID: 100100000, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
