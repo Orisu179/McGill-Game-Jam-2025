@@ -9890,7 +9890,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 398146469778723350, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
       propertyPath: currentGoalColor
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3733061459927172925, guid: 92685ede01f62e946be9211347d3a9d8, type: 3}
       propertyPath: m_Sprite

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoalPoint : MonoBehaviour
 {
@@ -15,8 +16,17 @@ public class GoalPoint : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManagement.Instance.FinishedCurrentColor(currentGoalColor);
+            // SceneManagement.Instance.FinishedCurrentColor(currentGoalColor);
+            Scene currentScene = SceneManager.GetActiveScene();
+
+            if (currentScene.name == "Tutorial") {
+              SceneManager.LoadScene("Mechanics");
+            }
+            if (currentScene.name == "Mechanics") {
+                SceneManager.LoadScene("Panels 2");
+            }
+
         }
-        SceneManagement.Instance.LoadScene();
+        // SceneManagement.Instance.LoadScene();
     }
 }
