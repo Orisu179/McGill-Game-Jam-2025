@@ -22,7 +22,7 @@ public class MechanicInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /*
         if(inThought){
             transform.Rotate(0,0,ThoughtRotationSpeed*Time.deltaTime);
             
@@ -39,6 +39,7 @@ public class MechanicInteraction : MonoBehaviour
         {
             lerpRotate(mySprite, 0, 5);
         }
+        */
     }
 	
 	private IEnumerator wait()
