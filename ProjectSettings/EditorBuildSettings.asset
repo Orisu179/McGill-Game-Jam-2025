@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ThoughtLevel.unity
     guid: b85dd59c1eb28497d81b962350ab791f
+  - enabled: 0
+    path: Assets/Scenes/Pause.unity
+    guid: 338b1ff287d7b724db9e5b40064fa44e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

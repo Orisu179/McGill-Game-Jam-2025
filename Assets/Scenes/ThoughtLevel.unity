@@ -8627,6 +8627,7 @@ GameObject:
   - component: {fileID: 849393153}
   - component: {fileID: 849393152}
   - component: {fileID: 849393151}
+  - component: {fileID: 849393156}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -8765,6 +8766,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &849393156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849393150}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639644571b15a504e9b94764ff8ed33a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: Pause
 --- !u!1 &907253649
 GameObject:
   m_ObjectHideFlags: 0
@@ -13393,8 +13407,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bangEffect: {fileID: 7525248515448733858, guid: 7829722ae378049adb67e941582b2fb5, type: 3}
-  ThoughtShotSpeed: 15
-  ThoughtRotationSpeed: 300
   mySprite: {fileID: 705639643}
 --- !u!114 &1863033883
 MonoBehaviour:

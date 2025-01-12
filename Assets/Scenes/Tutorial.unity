@@ -462,8 +462,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bangEffect: {fileID: 7525248515448733858, guid: 7829722ae378049adb67e941582b2fb5, type: 3}
-  ThoughtShotSpeed: 0
-  ThoughtRotationSpeed: 0
   mySprite: {fileID: 1215901823}
 --- !u!114 &244720824
 MonoBehaviour:
@@ -1871,8 +1869,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bangEffect: {fileID: 7525248515448733858, guid: 7829722ae378049adb67e941582b2fb5, type: 3}
-  ThoughtShotSpeed: 0
-  ThoughtRotationSpeed: 0
   mySprite: {fileID: 739949960}
 --- !u!114 &783564809
 MonoBehaviour:
@@ -9438,6 +9434,7 @@ GameObject:
   - component: {fileID: 2037003569}
   - component: {fileID: 2037003568}
   - component: {fileID: 2037003572}
+  - component: {fileID: 2037003573}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9576,6 +9573,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 244720822}
+--- !u!114 &2037003573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037003567}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639644571b15a504e9b94764ff8ed33a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: Pause
 --- !u!1 &2090879777
 GameObject:
   m_ObjectHideFlags: 0

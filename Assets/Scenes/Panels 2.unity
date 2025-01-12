@@ -2549,8 +2549,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bangEffect: {fileID: 7525248515448733858, guid: 7829722ae378049adb67e941582b2fb5, type: 3}
-  ThoughtShotSpeed: 0
-  ThoughtRotationSpeed: 0
   mySprite: {fileID: 176710592}
 --- !u!114 &480428227
 MonoBehaviour:
@@ -15055,6 +15053,7 @@ GameObject:
   - component: {fileID: 2037003568}
   - component: {fileID: 2037003572}
   - component: {fileID: 2037003573}
+  - component: {fileID: 2037003574}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -15290,6 +15289,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2037003574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037003567}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639644571b15a504e9b94764ff8ed33a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: Pause
 --- !u!1 &2061534023
 GameObject:
   m_ObjectHideFlags: 0
