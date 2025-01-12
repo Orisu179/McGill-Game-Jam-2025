@@ -86,22 +86,31 @@ public class PanelMove : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         //moving out of panel
-        Instantiate(ripEffect, transform.position, Quaternion.identity);
+        if (!MechanicInteraction.inThought)
+        {
+            Instantiate(ripEffect, transform.position, Quaternion.identity);
 
-        InPanel = false;
-        currentPanel = null;
-        if(transform.position.x > other.transform.position.x + other.transform.localScale.x / 2.2f){
-            leaveVelocity = new Vector2(1, 0);
-        }
-        else if(transform.position.x < other.transform.position.x - other.transform.localScale.x / 2.2f){
-            leaveVelocity = new Vector2(-1, 0);
-        }
 
-        if(transform.position.y > other.transform.position.y + other.transform.localScale.y / 2.2f){
-            leaveVelocity = new Vector2(0, 1);
-        }
-        else if(transform.position.y < other.transform.position.y - other.transform.localScale.y / 2.2f){
-            leaveVelocity = new Vector2(0, -1);
+
+            InPanel = false;
+            currentPanel = null;
+            if (transform.position.x > other.transform.position.x + other.transform.localScale.x / 2.2f)
+            {
+                leaveVelocity = new Vector2(1, 0);
+            }
+            else if (transform.position.x < other.transform.position.x - other.transform.localScale.x / 2.2f)
+            {
+                leaveVelocity = new Vector2(-1, 0);
+            }
+
+            if (transform.position.y > other.transform.position.y + other.transform.localScale.y / 2.2f)
+            {
+                leaveVelocity = new Vector2(0, 1);
+            }
+            else if (transform.position.y < other.transform.position.y - other.transform.localScale.y / 2.2f)
+            {
+                leaveVelocity = new Vector2(0, -1);
+            }
         }
     }
 }
