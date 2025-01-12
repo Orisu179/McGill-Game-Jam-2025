@@ -23,7 +23,7 @@ public class PlayerAudioControl : MonoBehaviour
 
     void Start()
     {
-        _characterMovement = GetComponent<CharacterMovement>();
+        _characterMovement = transform.parent.GetComponent<CharacterMovement>();
     }
 
     void Update()

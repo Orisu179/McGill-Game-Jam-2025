@@ -16,7 +16,7 @@ public class MechanicInteraction : MonoBehaviour
     {
         _startPos = transform.position;
         _rb = gameObject.GetComponent<Rigidbody2D>();
-        _audioControl = GetComponent<EffectsAudioControl>();
+        _audioControl = gameObject.GetComponentInChildren<EffectsAudioControl>();
         _bc = gameObject.GetComponent<BoxCollider2D>();
     }
 
@@ -59,26 +59,30 @@ public class MechanicInteraction : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.tag == "Spring"){
+        if(other.gameObject.CompareTag("Spring")){
             Instantiate(bangEffect, transform.position, Quaternion.identity);
             _rb.linearVelocity = new Vector2(_rb.linearVelocityX, 15);
             CameraScript.Shake(0.3f);
             other.gameObject.GetComponent<Animation>().Play();
+            _audioControl.PlayCollisionSound("Spring");
         }
-        else if(other.gameObject.tag == "Bubble"){
+        else if(other.gameObject.CompareTag("Bubble")){
             _rb.linearVelocity = new Vector2(_rb.linearVelocityX, 12);
             transform.position = other.transform.position;
+            _audioControl.PlayCollisionSound("Bubble");
         }
-        else if (other.gameObject.tag == "Thought")
+        else if (other.gameObject.CompareTag("Thought"))
         {
             inThought = true;
             transform.position = other.gameObject.transform.position;
             _rb.gravityScale = 0;
 			_bc.enabled = false;
+            _audioControl.PlayCollisionSound("Thought");
         }
-        else if (other.gameObject.tag == "Border")
+        else if (other.gameObject.CompareTag("Border"))
         {
             transform.position = _startPos;
+            _audioControl.PlayCollisionSound("Border");
         }
     }
 }
