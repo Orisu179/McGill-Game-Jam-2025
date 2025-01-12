@@ -32,12 +32,11 @@ public class CharacterMovement : MonoBehaviour
     public bool isGrounded;
     public Transform playerSprite;
 
-
-
     public bool canJump => _extraJumpTime > 0;
     public bool isDashing => _isDashing;
     public bool canDash => _canDash;
     public bool isWalking => (isGrounded && Math.Abs(_rb.linearVelocityX) > 0.001f);
+    public bool isJumping => !isGrounded && _rb.linearVelocityY > 0;
 
     void Start()
     {
