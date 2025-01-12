@@ -3,7 +3,7 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] private float speed = 0.5f;
-    [SerializeField] private float moveDistance = 3.0f;
+    [SerializeField] private float moveDistance = 2.5f;
     // 1 for right initially, -1 for left
     [SerializeField] private int direction = 1;
     private Vector3 startPos;
