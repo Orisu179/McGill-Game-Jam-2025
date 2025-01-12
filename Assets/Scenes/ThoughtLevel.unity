@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3ae67864a3c4f43abfffbfb3554b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popEffect: {fileID: 9213620702697768102, guid: be9c5c16b99264449bd1b4ae69c55c20, type: 3}
+  popEffect: {fileID: 2260723856863401376, guid: 35c970d7512f34821b9de7a5e10c2322, type: 3}
 --- !u!212 &46536614
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1447,7 +1447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3ae67864a3c4f43abfffbfb3554b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popEffect: {fileID: 9213620702697768102, guid: be9c5c16b99264449bd1b4ae69c55c20, type: 3}
+  popEffect: {fileID: 2260723856863401376, guid: 35c970d7512f34821b9de7a5e10c2322, type: 3}
 --- !u!212 &615481448
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2431,7 +2431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3ae67864a3c4f43abfffbfb3554b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popEffect: {fileID: 9213620702697768102, guid: be9c5c16b99264449bd1b4ae69c55c20, type: 3}
+  popEffect: {fileID: 2260723856863401376, guid: 35c970d7512f34821b9de7a5e10c2322, type: 3}
 --- !u!212 &786516184
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7131,7 +7131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3ae67864a3c4f43abfffbfb3554b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popEffect: {fileID: 9213620702697768102, guid: be9c5c16b99264449bd1b4ae69c55c20, type: 3}
+  popEffect: {fileID: 2260723856863401376, guid: 35c970d7512f34821b9de7a5e10c2322, type: 3}
 --- !u!212 &1981248040
 SpriteRenderer:
   m_ObjectHideFlags: 0

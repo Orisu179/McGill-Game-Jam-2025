@@ -32,11 +32,12 @@ public class CharacterMovement : MonoBehaviour
     public bool isGrounded;
     public Transform playerSprite;
 
-
-    public bool isJumping => (!isGrounded && _rb.linearVelocityY > 0);
-
+    public bool canJump => _extraJumpTime > 0;
     public bool isDashing => _isDashing;
-    public bool isWalking => (isGrounded && Mathf.Approximately(_rb.linearVelocityX, 0f));
+    public bool canDash => _canDash;
+    public bool isWalking => (isGrounded && Math.Abs(_rb.linearVelocityX) > 0.001f);
+    public bool isJumping => !isGrounded && _rb.linearVelocityY > 0;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -52,7 +53,6 @@ public class CharacterMovement : MonoBehaviour
     {
         inputX = Input.GetAxisRaw("Horizontal");
 
-        float deltaX = inputX * speed;
         //jumping
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && _extraJumpTime > 0)
         {
