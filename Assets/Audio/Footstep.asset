@@ -1,14 +1,34 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-6821527032722809218
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Paper Footstep 3_{-6821527032722809218}
+  m_AudioClip: {fileID: 8300000, guid: 4123a631edce4134e936555de6c1a787, type: 3}
+  m_Volume: -12
+  m_Enabled: 1
 --- !u!1233149941 &931470088285168280
 AudioContainerElement:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AudioContainerElement_{931470088285168280}
-  m_AudioClip: {fileID: 0}
-  m_Volume: 0
+  m_Name: Paper Footstep 1_{931470088285168280}
+  m_AudioClip: {fileID: 8300000, guid: 83b48d07e94848343bbca61bff7d2cdb, type: 3}
+  m_Volume: -12
+  m_Enabled: 1
+--- !u!1233149941 &1230532970663817911
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Paper Footstep 2_{1230532970663817911}
+  m_AudioClip: {fileID: 8300000, guid: 699d3639c1d795b4d9f327f492a07795, type: 3}
+  m_Volume: -12
   m_Enabled: 1
 --- !u!1307931743 &6418180475301049370
 AudioRandomContainer:
@@ -17,22 +37,24 @@ AudioRandomContainer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Footstep
-  m_Volume: 0
+  m_Volume: -8
   m_Pitch: 0
-  m_AutomaticTriggerTime: 0
+  m_AutomaticTriggerTime: 0.4
   m_LoopCount: 1
   m_VolumeRandomizationRange: {x: 0, y: 0}
-  m_PitchRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: 0, y: 2}
   m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
   m_LoopCountRandomizationRange: {x: 0, y: 0}
   m_Elements:
   - {fileID: 931470088285168280}
-  m_AvoidRepeatingLast: 0
-  m_PlaybackMode: 0
+  - {fileID: 1230532970663817911}
+  - {fileID: -6821527032722809218}
+  m_AvoidRepeatingLast: 1
+  m_PlaybackMode: 2
   m_TriggerMode: 1
   m_AutomaticTriggerMode: 1
-  m_LoopMode: 2
+  m_LoopMode: 0
   m_VolumeRandomizationEnabled: 0
-  m_PitchRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 1
   m_AutomaticTriggerTimeRandomizationEnabled: 0
   m_LoopCountRandomizationEnabled: 0
