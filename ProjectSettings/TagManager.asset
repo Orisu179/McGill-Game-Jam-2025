@@ -9,6 +9,7 @@ TagManager:
   - Thought
   - Border
   - Booster
+  - Portal
   layers:
   - Default
   - TransparentFX
