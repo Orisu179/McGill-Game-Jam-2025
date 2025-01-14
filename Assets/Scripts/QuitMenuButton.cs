@@ -7,7 +7,7 @@ public class QuitMenuButton : MonoBehaviour
         // Quit the application
         if (Application.isEditor)
         {
-            UnityEditor.EditorApplication.isPlaying = false;
+            // UnityEditor.EditorApplication.isPlaying = false;
         }
         else
         {

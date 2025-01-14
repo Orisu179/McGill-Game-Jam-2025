@@ -1,8 +1,4 @@
-using Unity.VisualScripting;
-using Unity.VisualScripting.ReorderableList;
-using UnityEditor.Callbacks;
-using UnityEditor.Rendering.LookDev;
-using UnityEditor.ShaderGraph.Internal;
+
 using UnityEngine;
 using UnityEngine.Serialization;
 
